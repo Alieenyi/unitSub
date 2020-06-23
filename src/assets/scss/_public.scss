@@ -1,0 +1,66 @@
+/*---------------------------------------------------------------- 
+// 文件功能描述：通用混合器、模块样式 
+// author：tyy
+// 时间：2020/06/01
+// 修改标识： 
+// 修改描述：
+//----------------------------------------------------------------*/
+
+/* font
+-------------------------- */
+$--font-size: .3rem !default;
+/* Color
+-------------------------- */
+$--color-font: #606266 !default;
+$--color-primary: #409EFF !default;
+$--color-white: #fff !default;
+$--color-black: #000000 !default;
+$--border-color: #DCDFE6 !default;
+/* Button
+-------------------------- */
+$--button-hover-tint-percent: 20% !default;
+$--button-active-shade-percent: 10% !default;
+
+
+
+/* Set Basics
+-------------------------- */
+@mixin elementSize($w,$h){  
+	width: $w;
+	height: $h;
+}
+
+/* Set Button
+-------------------------- */
+@mixin button-type($color) {
+	// color: $--color-primary;
+	// background: mix($--color-white, $--color-primary, 90%);
+	// border-color: mix($--color-white, $--color-primary, 60%);
+	&:hover,&:focus {
+		background: mix($--color-white, $color, 20%);
+		border-color: mix($--color-white, $color, 10%);
+		color: $--color-white;
+	}
+
+	&:active {
+		background: mix($--color-black, $color, $--button-active-shade-percent);
+		border-color: mix($--color-black, $color, $--button-active-shade-percent);
+		color: $--color-white;
+		outline: none;
+	}
+
+	&.is-disabled {
+        cursor: not-allowed;
+		&, &:hover, &:focus, &:active {
+			color: mix($--color-white, $color, 40%);
+			background-color: mix($--color-white, $color, 90%);
+			border-color: mix($--color-white, $color, 80%);
+		}
+	}
+}
+@mixin button-size( $w, $h, $font-size, $border-radius) {
+	@include elementSize($w,$h);
+	line-height: $h;
+	font-size: $font-size;
+	border-radius: $border-radius;
+}

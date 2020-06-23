@@ -1,0 +1,108 @@
+/*---------------------------------------------------------------- 
+// 文件功能描述：通用样式、标签初始化
+// author：Inthur
+// 时间：2018/08/01
+// 修改标识： 
+// 修改描述：
+//----------------------------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;/*禁用手机浏览器的用户选择功能 */
+    -webkit-tap-highlight-color: transparent;  /*手机端点击时出现的阴影*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    /*解决chrome浏览器下字体不能小于12px*/ 
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    
+}
+.clearfix:after{
+    content:"\20";
+    display:block;
+    clear:both;
+}
+.clearfix{
+    *zoom:1;
+}
+a{
+    text-decoration: none;
+    color: inherit; 
+}
+
+button{
+	border:0;
+	background-color:none;
+	outline: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-appearance: none;
+}
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    vertical-align: bottom; /*图片间隙问题*/
+}
+em,
+i {
+    font-style: normal;
+}
+input,
+textarea {
+    outline: 0;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout:default;
+    -webkit-user-select:text;
+    -khtml-user-select:text;
+    -moz-user-select:text;
+    -ms-user-select:text;
+    user-select:text;/*禁用手机浏览器的用户选择功能 */
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+    color: #cccccc;
+}
+// input[type="submit"],
+// input[type="reset"],
+// input[type="button"],
+// input[type=date],
+// button,
+// select,
+// input[type=text],
+// input[type=number] {
+//     /*去掉苹果的默认UI来渲染按钮 、解决部分手机浏览器对border：none无效办法*/
+//     border: 0;
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     appearance: none;
+// }
+
+body {
+    font-family: '微软雅黑', 'Microsoft Yahei', 'Hiragino Sans GB', '宋体', Helvetica, STHeiti, Arial, sans-serif;  
+}
+
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
