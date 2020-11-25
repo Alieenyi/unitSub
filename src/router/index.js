@@ -9,6 +9,10 @@ export default new Router({
 			path: '/',                                   
 			name: 'index',
 			component: () => import('@/views/index')
+		},{
+			path: '/input',                                   
+			name: 'input',
+			component: () => import('@/views/input')
 		},
 		{
 			path: '/button',                                   
@@ -19,6 +23,16 @@ export default new Router({
 			path: '/radio',                                   
 			name: 'radio',
 			component: () => import('@/views/radio')
+		},
+		{
+			path: '/checkbox',                                   
+			name: 'checkbox',
+			component: () => import('@/views/checkbox')
+		},
+		{
+			path: '/switch',                                   
+			name: 'switch',
+			component: () => import('@/views/switch')
 		},
 	]
 })

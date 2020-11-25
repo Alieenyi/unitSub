@@ -3,7 +3,7 @@
         <div class="m-form_item">
             <div class="label">按钮</div>
             <div class="form_content">
-                <u-button>默认按钮</u-button>
+                <u-button @click.native="handleClick">默认按钮</u-button>
                 <!-- 改变button的样式，可以通过改变type来达到添加class从而更改样式 -->
                 <u-button type="primary">主要按钮</u-button>   
             </div>
@@ -43,6 +43,9 @@ export default {
         }
     },
     methods:{
+        handleClick(){
+            console.log("aaaaaa")
+        }
     }
 }
 </script>

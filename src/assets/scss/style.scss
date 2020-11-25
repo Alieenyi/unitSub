@@ -182,7 +182,6 @@
     cursor: pointer;
     white-space: nowrap;
     margin-right: .6rem;
-    user-select: none;
     .u-radio_input {
         display: inline-block;
         white-space: nowrap;
@@ -197,6 +196,204 @@
             background-color: #fff;
             position: relative;
             box-sizing: border-box;
+            &:after{
+                @include elementSize(.08rem, .08rem);
+                border-radius: 100%;
+                background-color: #fff;
+                content: "";
+                position: absolute; left: 50%; top: 50%;
+                transform: translate(-50%,-50%) scale(0);
+                transition: transform .15s ease-in;
+            }
+        }
+    }
+    &.is-checked .u-radio_inner{
+        border-color: $--color-primary;
+        background: $--color-primary;
+        &:after{
+            transform: translate(-50%,-50%) scale(1);
+        }
+    }
+    &.is-disabled{
+        color: #c0c4cc;
+        .u-radio_inner{
+            background-color: #f5f7fa;
+            border-color: #e4e7ed;
+            &:after{
+                background-color: #c0c4cc;
+            }
         }
     }
 }
+
+/**************************多选************************************/ 
+.u-checkbox{
+    display: inline-block;
+    font-size: $--font-size; color: $--color-font;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-right: .6rem;
+    .u-checkbox_input {
+        display: inline-block;
+        white-space: nowrap;
+        line-height: 1;
+        position: relative;
+        vertical-align: middle;
+        .u-checkbox_inner{
+            display: inline-block;
+            border: 1px solid $--border-color;
+            @include elementSize(.28rem, .28rem);
+            border-radius: .04rem;
+            background-color: #fff;
+            position: relative;
+            box-sizing: border-box;
+            &:after{
+                @include elementSize(.06rem, .14rem);
+                content: "";
+                border: 1px solid #fff;
+                border-left: 0;
+                border-top: 0;
+                position: absolute; top: .02rem; left: .08rem;
+                transform: rotate(45deg) scaleY(0);
+                transition: transform .15s ease-in .05s;
+                transform-origin: center
+            }
+        }
+    }
+    
+    &.is-checked .u-checkbox_inner{
+        border-color: $--color-primary;
+        background: $--color-primary;
+        &:after{
+            transform: rotate(45deg) scaleY(1);
+        }
+    }
+}
+
+/**************************开关************************************/ 
+.u-switch{
+    display: inline-block;
+    align-items: center;
+    vertical-align: middle;
+    height: .64rem;
+    line-height: .64rem;
+    .u-switch_input {
+        position: relative;
+        @include elementSize(1.04rem, .64rem);
+        border-radius: .64rem;
+        border: 1px solid #DFDFDF;
+        background-color: #DFDFDF;
+        transition: background-color 0.1s, border 0.1s;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .u-switch_input:checked {
+        border-color: $--color-primary;
+        background-color: $--color-primary;
+    }
+    .u-switch_input:checked:before {
+        transform: scale(0);
+    }
+    .u-switch_input:before {
+        content: " ";
+        position: absolute; top: 0; left: 0;
+        @include elementSize(1rem, .6rem);
+        border-radius: .3rem;
+        background-color: #FDFDFD;
+        transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+    }
+    .u-switch_input:checked:after {
+        transform: translateX(20px);
+    }
+    .u-switch_input:after {
+        content: " ";
+        position: absolute; top: 0; left: 0;
+        @include elementSize(.6rem, .6rem);
+        border-radius: .6rem;
+        background-color: #FFFFFF;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+    }
+    .u-switch-label{
+        display: inline-block;
+        vertical-align: middle;
+        height: .64rem;
+        *{
+            line-height: 1;
+            font-size: .28rem;
+            display: inline-block;
+        }
+        &.is-active{
+            color: $--color-primary;
+        }
+    }
+    .label_left{
+        margin-right: .2rem;
+    }
+    .label_right{
+        margin-left: .2rem;
+    }
+}
+
+
+/**************************选择器************************************/ 
+.u-select{
+    position: relative;
+    width: 3.9rem; height: .8rem;
+    .u-select_inner{
+        width: 100%; height: 100%;
+        background: #f3f5f7;
+        position: relative;
+        border-radius: .4rem;
+    }
+    .u-input{
+        width: 100%; height: 100%;
+        position: relative;
+        padding: 0 .6rem 0 .32rem;
+        input{
+            width: 100%; height: 100%;
+            background: none;
+            font-size: .3rem;
+            display: block;
+            text-align: center;
+        }
+        input:disabled, input[disabled]{ color:#000;-webkit-text-fill-color:#000;}
+        &::after{
+            content: '';
+            background: url(~@/assets/img/arrow_btm.png) no-repeat 0 center;
+            background-size: 100%;
+            width: .24rem; height: 100%;
+            position: absolute; right: .32rem; top: 0;
+        }
+    }
+    
+    .u-select_dropdown{
+        position: absolute; top: 1.6rem; left: .35rem;
+        width: 3.2rem; 
+        background: #fff;
+        padding: .4rem 0;
+        border-radius: .4rem;
+        z-index: 4000;
+        .ico{
+            position: absolute; left: 50%; top: -.22rem; transform: translateX(-50%);
+            background: url(~@/assets/img/arrow_right.png) no-repeat 0 0;
+            background-size: 100%;
+            width: .4rem; height: .26rem;
+        }
+        li{
+            text-align: center;
+            font-size: .32rem;
+            line-height: .8rem;
+            &.selected{
+                color: #ff7b12;
+            }
+        }
+        ul{
+            max-height: 4.5rem;
+            overflow: auto;
+        }
+    }
+}
+
+

@@ -106,3 +106,6 @@ body {
 .right{
 	float: right;
 }
+input:disabled {
+    opacity: .6;
+}
