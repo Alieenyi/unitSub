@@ -1,10 +1,8 @@
-import Button from './button';
-import ButtonGroup from '../button/button-group';
+import Echart from './echart';
 
 // 可有可无   这段主要是针对按需导入
 const components = [
-    Button,
-    ButtonGroup
+    Echart,
 ]
 components.forEach(item => {
     item.install = function(Vue) {
@@ -12,4 +10,4 @@ components.forEach(item => {
     };
 })
 
-export { Button,ButtonGroup};
+export default Echart;

@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade" @after-leave="handleAfterLeave">
+    <transition name="tips" @after-leave="handleAfterLeave">
         <div class="tip-body" :class="isClass" v-if="visible">
             <div class="tip-box">
                 <div v-html="content"></div>
@@ -33,6 +33,8 @@ export default {
         }
     },
     methods: {
+        // this指向组件的实例。
+        // $el指向当前组件的DOM元素。
         handleAfterLeave() {
             this.$destroy(true);                        //完全销毁一个实例。清理它与其它实例的连接，解绑它的全部指令及事件监听器。
             this.$el.parentNode.removeChild(this.$el);

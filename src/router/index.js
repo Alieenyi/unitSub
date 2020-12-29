@@ -34,5 +34,10 @@ export default new Router({
 			name: 'switch',
 			component: () => import('@/views/switch')
 		},
+		{
+			path: '/echarts',                                   
+			name: 'echarts',
+			component: () => import('@/views/echarts')
+		},
 	]
 })

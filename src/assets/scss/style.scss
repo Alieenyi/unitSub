@@ -90,84 +90,8 @@
 }
 
 /**************************输入框************************************/ 
-.u-input{
-    @include elementSize(100%,.8rem);
-    border-radius: .8rem;
-    border: 1px solid $--border-color;
-    padding: 0 .4rem;
-    position: relative;
-    display: table;
-    input{
-        font-size: .3rem;          
-        @include elementSize(100%,100%);
-        caret-color:$--color-primary;
-        display: table-cell;
-        float: left;
-    }
-    .u-input-group_prepend,.u-input-group_append{
-        height: 100%;
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .u-input-group_prepend{ 
-        padding-right: .3rem;
-    }
-    .u-input-group_append{ 
-        padding-left: .3rem;
-    }
-}
-.u-textarea{
-    position: relative;
-    @include elementSize(100%,4.04rem);
-    border-radius: .4rem;
-    border: 1px solid $--border-color;
-    vertical-align: bottom;
-    padding: .3rem .4rem .5rem;
-    textarea{
-        font-size: .3rem;          
-        line-height: .4rem;
-        @include elementSize(100%,100%);
-    }
-}
-.u-input .note,.u-textarea .note{
-    position: absolute; right: .4rem; bottom: 0;
-    color:#ccc;
-    font-size: .3rem; line-height: .78rem; 
-    i{
-        color: $--color-primary;
-    }
-}
-.u-input_suffix{
-    position: absolute; right: .4rem; top: 0;
-    height: 100%;
-    .u-input_icon{
-        float: left;
-        margin-left: .4rem;
-    }
-    .u-input_clear{
-        background: url(../img/ico_close_tag.png) no-repeat 0 center;
-        background-size: 100%;
-        @include elementSize(.32rem,100%);
-    }
-    .u-input_visual{
-        background: url(../img/ico_visual.png) no-repeat 0 center;
-        background-size: 100%;
-        @include elementSize(.5rem,100%);
-    }
-    .u-input_visualun{
-        background: url(../img/ico_visualun.png) no-repeat 0 center;
-        background-size: 100%;
-        @include elementSize(.5rem,100%);
-    }
-}
-.u-input.is-limi{
-    padding-right: 1.2rem;
-}
-.u-input.is-suffix{
-    padding-right: 1.2rem;
-}
 .vtips{
-    color: $--color-primary;
+    color: #409EFF;
     font-size: .24rem;
     line-height: .6rem;
     padding: 0 .4rem;

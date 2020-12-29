@@ -5,9 +5,12 @@ import App from './App'
 import router from './router'
 import './assets/css/animate.css'
 import './assets/css/icon.min.css'
-import './assets/css/style.min.css'
+// import './assets/css/style.min.css'
+import './assets/scss/style.scss'
 import './components'               //加载公共组件  !!!
+import echarts from 'echarts'
 
+Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
